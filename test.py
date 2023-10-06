@@ -1,21 +1,19 @@
-import math2
+load math2
 
-x: int = 30
+x:int = 30
 print(math2.add(20, x))
 print(x)
 
-
-def main() -> "None":
+def main()->"None":
     print("390")
 
-
-def fib(n: int) -> "int":
+def fib(n:int)->"int":
     if n <= 1:
         return n
     else:
-        return fib(n - 1) + fib(n - 2)
+        return fib(n-1) + fib(n-2)
 
-
-e: int = fib(20)
+e:int = fib(20)
 
 print(e)
+

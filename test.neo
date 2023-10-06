@@ -1,4 +1,4 @@
-load math2.neo
+load math2
 
 var x:int -> 30
 echo math2.add(20, x)

@@ -5,7 +5,7 @@ print_regex = r"echo (.*)"
 function_regex = r"__(.*)\((.*)\)::(.*)->"
 function_call_regex = r"call (.*)"
 var_def_regex = r"var (.*):(.*) -> (.*)"
-import_regex = r"load (.*)"
+import_regex = r"load (.*).neo"
 
 
 regex_patterns = [
