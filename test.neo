@@ -1,8 +1,18 @@
+load math2.neo
+
 var x:int -> 30
-echo 20 * x
+echo math2.add(20, x)
 echo x
 
 __main()::None->
 	echo "390"
 
-call main
+__fib(n:int)::int->
+    if n <= 1:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+
+var e:int -> fib(20) 
+
+echo e

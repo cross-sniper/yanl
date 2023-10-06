@@ -5,12 +5,15 @@ print_regex = r"echo (.*)"
 function_regex = r"__(.*)\((.*)\)::(.*)->"
 function_call_regex = r"call (.*)"
 var_def_regex = r"var (.*):(.*) -> (.*)"
+import_regex = r"load (.*)"
+
 
 regex_patterns = [
     print_regex,
     function_regex,
     function_call_regex,
     var_def_regex,
+    import_regex,
 ]
 
 
@@ -57,7 +60,14 @@ def process_line(line):
                     " " * (indentation_level * 4)
                     + f"{variable_name}:{variable_type} = {variable_value}"
                 )
-
+            elif re.match(import_regex, line):
+                match = re.match(import_regex, line)
+                module_name = match.group(1)
+                read_and_compile(module_name)
+                return (
+                    " " * (indentation_level * 4)
+                    + f"import {module_name.replace('.neo','')}"
+                )
     # If the line doesn't match any regex, return it with appropriate indentation
     return " " * (indentation_level * 4) + line
 
